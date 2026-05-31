@@ -23,9 +23,15 @@ string_flag(
 # llvm libaries from source. Building llvm from source has a huge impact on
 # build times. Instead, we depend on a pre-built llvm release and instantiate
 # the bindgen toolchain with the prebuilt binaries.
+#
+# libclang itself comes from Nix rather than the prebuilt clang+llvm-10 release:
+# that release is linked against libtinfo.so.5 / GNU libstdc++.so.6, which
+# modern hosts (e.g. Ubuntu 24.04) do not ship, and the bindgen action's sealed
+# loader only resolves /nix/store. The Nix libclang is self-contained. See
+# //third_party/nix:libclang.bzl (it reads NIX_LIBCLANG_LIB from the dev shell).
 cc_import(
     name = "libclang",
-    shared_library = "@llvm_toolchain_llvm//:lib/libclang.so",
+    shared_library = "@nix_libclang//:libclang.so",
 )
 
 cc_import(

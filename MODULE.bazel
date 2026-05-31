@@ -218,6 +218,13 @@ llvm.toolchain(
 )
 use_repo(llvm, "llvm_toolchain_llvm")
 
+# Nix-provided libclang for the rust-bindgen toolchain (see
+# //third_party/nix:libclang.bzl). The prebuilt clang+llvm-10 libclang above
+# cannot be loaded on modern hosts; the Nix dev shell exports NIX_LIBCLANG_LIB
+# pointing at a self-contained Nix libclang.
+nix_libclang = use_extension("//third_party/nix:libclang.bzl", "nix_libclang")
+use_repo(nix_libclang, "nix_libclang")
+
 # Python toolchain:
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(

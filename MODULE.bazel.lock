@@ -746,6 +746,22 @@
         ]
       }
     },
+    "//third_party/nix:libclang.bzl%nix_libclang": {
+      "general": {
+        "bzlTransitiveDigest": "YHp11FkxUF8smkA3b1OooT2bEVCo0W3Xr5OLir2nbLw=",
+        "usagesDigest": "i0VlDb+nUq9oshpfUrLpMuMHMgkuZfcDRVagzL4SJvs=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "nix_libclang": {
+            "repoRuleId": "@@//third_party/nix:libclang.bzl%_nix_libclang_repo",
+            "attributes": {}
+          }
+        },
+        "recordedRepoMappingEntries": []
+      }
+    },
     "//third_party/open-dice:extensions.bzl%open_dice": {
       "general": {
         "bzlTransitiveDigest": "UhdXaJTUEbJuY/x/+01mDCYVaehypBWPdrNmR8Qq7Wo=",

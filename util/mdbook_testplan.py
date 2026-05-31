@@ -14,7 +14,7 @@ import io
 from pathlib import Path
 
 from mdbook import utils as md_utils
-import dvsim.Testplan as Testplan
+import dvsim.testplan as Testplan
 
 
 def main() -> None:
